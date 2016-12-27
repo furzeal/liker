@@ -38,9 +38,10 @@ class HomeController extends Controller
     {
         $vk=new VK();
 
-        while (!isset($users)) {
+        while (!isset($users['response'])) {
             $users=$vk->getUsers();
         }
-        return $vk->getUsers()['response']['items'];
+        return $users['response']['items'];
     }
 }
+

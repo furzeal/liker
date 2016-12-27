@@ -54,7 +54,6 @@ class VK
             if (isset($response['response'])) {
                 $response = $response['response'][0];
             }
-            //sleep(0.3);
         }
         return $response;
     }
