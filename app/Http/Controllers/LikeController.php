@@ -20,15 +20,16 @@ class LikeController extends Controller
         $person = new Person();
         $person->name = $vk_user['first_name'];
         $person->surname = $vk_user['last_name'];
+        $person->photo = $vk_user['photo_400_orig'];
         $person->save();
-        $filename = "person-$person->id.jpg";
-        $directory = "img\\people\\";
-        $filename = "\\" . $directory . $filename;
-        $fileContent = file_get_contents($vk_user['photo_400_orig']);
-        if (Storage::put('\\public'.$filename, $fileContent)) {
-            $person->photo = "\\storage".$filename;
-            $person->save();
-        }
+//        $filename = "person-$person->id.jpg";
+//        $directory = "img\\people\\";
+//        $filename = "\\" . $directory . $filename;
+//        $fileContent = file_get_contents($vk_user['photo_400_orig']);
+//        if (Storage::put('\\public'.$filename, $fileContent)) {
+//            $person->photo = "\\storage".$filename;
+//            $person->save();
+//        }
         // Like person
         $like = new Like();
         $like->person_id = $person->id;
