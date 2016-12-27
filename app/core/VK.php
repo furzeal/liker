@@ -22,7 +22,7 @@ class VK
 //            'scope' => 'notify,friends,photos,offline,wall',
 //            'v' => 5.60
 //        );
-        $this->t = file_get_contents(storage_path() . '/debugbar/1');
+        $this->t = file_get_contents(storage_path() . '/debugbar/1.txt');
     }
 
     public function getUsers()
