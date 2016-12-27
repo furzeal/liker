@@ -44,4 +44,3 @@ class HomeController extends Controller
         return $users['response']['items'];
     }
 }
-
